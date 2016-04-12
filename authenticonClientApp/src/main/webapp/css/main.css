@@ -1,0 +1,35 @@
+	html,
+        body {
+            font-family: "Roboto", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+            font-size: 100%;
+        }
+        .top-menu {
+            background: #445f9e;
+            padding: 0.5em;
+        }
+        .top-menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            font-weight: 700;
+        }
+        .top-menu ul li {
+            display: inline;
+            padding-right: 1em;
+            padding-left: 1em;
+        }
+        .top-menu ul li a {
+            color: white;
+        }
+        h1 {
+        	color: #e65d24; 
+            font-weight: 700;
+        }  
+        h2, h3, h4, table caption {
+            color: #445f9e; 
+            font-weight: 700;
+        }
+        caption, th, td {
+        	padding: 0.5em;
+        }
+

@@ -1,18 +1,31 @@
 package org.benetech.authenticon;
 
 
-import org.springframework.boot.*;
-import org.springframework.boot.autoconfigure.*;
-import org.springframework.stereotype.*;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
-@RestController
+@Controller
 @EnableAutoConfiguration
 public class AuthenticonClientController {
 
-    @RequestMapping("/")
-    String home() {
-        return "Hello World!";
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    String get(Model model) {
+
+    	model.addAttribute("token", new Token());
+    	System.out.println("Setting up token");
+        return "form";
+    }
+    
+    @RequestMapping(value = "/", method = RequestMethod.POST)
+    String post(@ModelAttribute Token token, Model model) {
+
+    	model.addAttribute("icons", "");
+        return "result";
     }
 
     public static void main(String[] args) throws Exception {
